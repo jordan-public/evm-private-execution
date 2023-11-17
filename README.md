@@ -124,3 +124,7 @@ A: Since this hackathon is in Türkiye, in Turkish "sarma" means "wrapping". I u
 Q: Is his fast?
 <br/>
 A: Yes, there is no on-chain proving, thus no on-chain heavy computation. Only verifications occur on-chain, and there is a helpful pre-compile already in most EVMs to make the verification fast. Executing a small amount of public code is faster, but for private transactions, as the code is executed off-chain, the execution happens in constant time and cost, regardless of the amount of calculations.
+
+Q: How come we do not need a tree to store the Sarmas, as Aleo stores its "records" in a Sparse Merkle Tree?
+<br/>
+A: The Sarmas are stored and governed by the EVM Smart Contract. The EVM is responsible for storing them. However, in order to hide the Sarmas the private and the public address spaces are separated. Even though the movement of Sarmas can be observed, the EVM Smart Contract acts as a "mule" and does know what it is moving. In addition to this, each function call to the EVM Smart Contract can be performed from a different address (EOA). Actually some knowledge about the Sarma movements is revealed, but this knowledge is useless and thus irrelevant.
