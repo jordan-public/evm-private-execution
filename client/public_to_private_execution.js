@@ -30,8 +30,8 @@ const payloadBytes = ethers.toUtf8Bytes(s.slice(130))
 const decoder = new TextDecoder('utf-8');
 const hexString = decoder.decode(payloadBytes);
 const decimalArray = [parseInt(hexString, 16)];
-const uint8Array = new Uint8Array(decimalArray);
-const payloadDigest = ethers.keccak256(uint8Array)
+const payloadUint8Array = new Uint8Array(decimalArray);
+const payloadDigest = ethers.keccak256(payloadUint8Array)
 // console.log('payloadDigest', payloadDigest, typeof payloadDigest, payloadDigest.length)
 
 // const payloadDigest = ethers.keccak256(payloadBytes)
@@ -43,7 +43,7 @@ const proverToml =
     `public_key_y = ${JSON.stringify(Array.from(ethers.getBytes('0x' + publicKey1.slice(68, 132)), byte => byte.toString()))}` + "\n" +
     `signature = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s.slice(0,128)), byte => byte.toString()))}` + "\n" +
     `privkey = ${JSON.stringify(Array.from(ethers.getBytes(privateKey1), byte => byte.toString()))}` + "\n" +
-    `sarma_payload_digest = ${JSON.stringify(Array.from(ethers.getBytes(payloadDigest), byte => byte.toString()))}` + "\n" +
+    `sarma_payload = ${JSON.stringify(Array.from(payload, byte => byte.toString()))}` + "\n" +
     `sarma = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
     `sarma_decrypted = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}`
 fs.writeFileSync('../zk/pub2prv_xfer/Prover.toml', proverToml)

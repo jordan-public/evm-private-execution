@@ -13,13 +13,13 @@ fn arblen_elgamal_encrypt(privkey: [u8; 32], cleartext: [u8; sarma_length], cyph
 
 fn isSarma(public_key_x : [u8; 32], public_key_y : [u8; 32], signature: [u8; 64], 
     privkey: [u8; 32],
-    sarma: [u8; sarma_length], sarma_decrypted: [u8; sarma_length]) {
+    sarma: [u8; sarma_length], sarma_decrypted: [u8; sarma_length],
+    sarma_payload: [u8; sarma_length-65])  {
         
     arblen_elgamal_encrypt(privkey, sarma, sarma_decrypted);
 
-    let mut sarma_payload: [u8; sarma_length-65] = [0; sarma_length-65];
     for i in 65..sarma_length {
-        sarma_payload[i-65] = sarma_decrypted[i];
+        assert(sarma_payload[i-65] == sarma_decrypted[i]);
     }
     let sarma_payload_digest = std::hash::keccak256(sarma_payload, (sarma_length-65) as u32);
 
@@ -28,9 +28,8 @@ fn isSarma(public_key_x : [u8; 32], public_key_y : [u8; 32], signature: [u8; 64]
 
 fn main(public_key_x : [u8; 32], public_key_y : [u8; 32], signature: [u8; 64],
     privkey: [u8; 32],
-    sarma: [u8; sarma_length], sarma_decrypted: [u8; sarma_length]) {
+    sarma: [u8; sarma_length], sarma_decrypted: [u8; sarma_length],
+    sarma_payload: pub [u8; sarma_length-65]) {
 
-    isSarma(public_key_x, public_key_y, signature, privkey, sarma, sarma_decrypted);
-    
-    // Other checks here
+    isSarma(public_key_x, public_key_y, signature, privkey, sarma, sarma_decrypted, sarma_payload);
 }
