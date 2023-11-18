@@ -1,7 +1,7 @@
 const sarma = require('./sarma')
 const ethers = require('ethers')
 const fs = require('fs')
-const { exec } = require('child_process');
+const { exec, execSync } = require('child_process');
 
 const privateKey1 = fs.readFileSync('./keys/account1').toString()
 const publicKey2 = fs.readFileSync('./keys/account2.pub').toString()
@@ -51,23 +51,46 @@ fs.writeFileSync('../zk/pub2prv_xfer/Prover.toml', proverToml)
 // Generate the proof
 // Execute the following command in the ../zk/pub2prv_xfer directory
 // nargo prove
-exec('cd ../zk/pub2prv_xfer && time nargo prove --silence-warnings', (error, stdout, stderr) => {
-    if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-    console.error(`stderr: ${stderr}`);
-});
+try {
+    execSync('cd ../zk/pub2prv_xfer && time nargo prove --silence-warnings', { encoding: 'utf-8' });
+} catch (error) {
+    console.error('Error occurred:', error);
+}
 
 // Execute the following command in the ../zk/pub2prv_xfer directory
 // nargo verify
-exec('cd ../zk/pub2prv_xfer && time nargo verify --silence-warnings', (error, stdout, stderr) => {
-    if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-    console.error(`stderr: ${stderr}`);
-});
+try {
+    execSync('cd ../zk/pub2prv_xfer && time nargo verify --silence-warnings', { encoding: 'utf-8' });
+} catch (error) {
+    console.error('Error occurred:', error);
+}
 
+ const sp = '0x' + s + s.slice(130);
+ console.log('Sarma + payload: ', sp);
+
+ const proof = '0x' + fs.readFileSync('../zk/pub2prv_xfer/proofs/pub2prv_xfer.proof').toString();
+ console.log('Proof: ', proof);
+
+// try {
+//     const output = execSync('cd ../evm && source .env && echo $CONTRACT_ADDRESS && ls', { encoding: 'utf-8' });
+//     console.log('Output:', output);
+// } catch (error) {
+//     console.error('Error occurred:', error);
+// }
+
+try {
+    const command = 'cd ../evm && source .env && cast send $CONTRACT_ADDRESS "pub2prvXfer(bytes,bytes)" ' +
+    sp + ' ' + proof + ' --private-key $PRIVATE_KEY --rpc-url $RPC_URL';
+    console.log('Command:', command)
+    const output = execSync(command, { encoding: 'utf-8' });
+    console.log('Output:', output);
+} catch (error) {
+    console.error('Error occurred:', error);
+}
+
+// try {
+//     const output = execSync('cd ../evm && source .env && cast --help', { encoding: 'utf-8' });
+//     console.log('Output:', output);
+// } catch (error) {
+//     console.error('Error occurred:', error);
+// }

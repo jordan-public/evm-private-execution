@@ -56,6 +56,7 @@ contract Xfers is SarmaManager {
         }
 
         // Create Sarma UTXO and deduct beans
+        // This should not be there - just for my sanity
         {
         bytes memory singleByte = new bytes(1);
         singleByte[0] = sarmaToDestroy[SARMA_SIZE];
