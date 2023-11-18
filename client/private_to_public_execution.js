@@ -71,13 +71,6 @@ try {
  const proof = '0x' + fs.readFileSync('../zk/pub2prv_xfer/proofs/pub2prv_xfer.proof').toString();
  console.log('Proof: ', proof);
 
-// try {
-//     const output = execSync('cd ../evm && source .env && echo $CONTRACT_ADDRESS && ls', { encoding: 'utf-8' });
-//     console.log('Output:', output);
-// } catch (error) {
-//     console.error('Error occurred:', error);
-// }
-
 try {
     const command = 'cd ../evm && source .env && cast send $CONTRACT_ADDRESS "pub2prvXfer(bytes,bytes)" ' +
     sp + ' ' + proof + ' --private-key $PRIVATE_KEY --rpc-url $RPC_URL';
@@ -87,10 +80,3 @@ try {
 } catch (error) {
     console.error('Error occurred:', error);
 }
-
-// try {
-//     const output = execSync('cd ../evm && source .env && cast --help', { encoding: 'utf-8' });
-//     console.log('Output:', output);
-// } catch (error) {
-//     console.error('Error occurred:', error);
-// }
