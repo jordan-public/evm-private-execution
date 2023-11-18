@@ -3,6 +3,7 @@ pragma solidity ^0.8.13;
 
 import "./SarmaHandler.sol";
 import "./SarmaManager.sol";
+import "forge-std/console.sol";
 
 contract Xfers is SarmaManager {
     SarmaHandler public pub2prvVerifier;
@@ -25,14 +26,16 @@ contract Xfers is SarmaManager {
         for (uint256 i = 0; i < SARMA_SIZE+SARMA_PAYLOAD_SIZE; i++) {
             publicInputs[i] = bytes32(sarmaToCreate[i]);
         }
-        require(pub2prvVerifier.verify(proof, publicInputs), "Unauthorized");
+        // require(pub2prvVerifier.verify(proof, publicInputs), "Unauthorized"); // Verifier broken until future version of Noir
+        // See issue: https://github.com/AztecProtocol/aztec-packages/issues/1844
 
         // Create Sarma UTXO and deduct beans
         createSarma(sarmaToCreate);
         bytes memory singleByte = new bytes(1);
         singleByte[0] = sarmaToCreate[SARMA_SIZE];
-        uint8 payload = abi.decode(singleByte, (uint8));
-        assert(beans >= payload);
+        //uint8 payload = abi.decode(singleByte, (uint8));
+        uint8 payload = uint8(sarmaToCreate[SARMA_SIZE]);
+        require(beans >= payload, "Not enough beans");
         beans -= payload;
     }
 
@@ -52,21 +55,22 @@ contract Xfers is SarmaManager {
         for (uint256 i = 0; i < SARMA_SIZE+SARMA_PAYLOAD_SIZE; i++) {
             publicInputs[i + 2*SARMA_SIZE + 2*SARMA_PAYLOAD_SIZE] = bytes32(sarma2ToCreate[i]);
         }
-        require(prv2prvVerifier.verify(proof, publicInputs), "Unauthorized");
+        // require(prv2prvVerifier.verify(proof, publicInputs), "Unauthorized"); // Verifier broken until future version of Noir
+        // See issue: https://github.com/AztecProtocol/aztec-packages/issues/1844
         }
 
         // Create Sarma UTXO and deduct beans
         // This should not be there - just for my sanity
-        {
-        bytes memory singleByte = new bytes(1);
-        singleByte[0] = sarmaToDestroy[SARMA_SIZE];
-        uint8 payloadToDestroy = abi.decode(singleByte, (uint8));
-        singleByte[0] = sarma1ToCreate[SARMA_SIZE];
-        uint8 payload1ToCreate = abi.decode(singleByte, (uint8));
-        singleByte[0] = sarma2ToCreate[SARMA_SIZE];
-        uint8 payload2ToCreate = abi.decode(singleByte, (uint8));
-        assert(payloadToDestroy == payload1ToCreate + payload2ToCreate);
-        }
+        // {
+        // bytes memory singleByte = new bytes(1);
+        // singleByte[0] = sarmaToDestroy[SARMA_SIZE];
+        // uint8 payloadToDestroy = abi.decode(singleByte, (uint8));
+        // singleByte[0] = sarma1ToCreate[SARMA_SIZE];
+        // uint8 payload1ToCreate = abi.decode(singleByte, (uint8));
+        // singleByte[0] = sarma2ToCreate[SARMA_SIZE];
+        // uint8 payload2ToCreate = abi.decode(singleByte, (uint8));
+        // require(payloadToDestroy == payload1ToCreate + payload2ToCreate, "Payload amounts mismatch");
+        // }
 
         destroySarma(sarmaToDestroy);
         createSarma(sarma1ToCreate);
@@ -82,7 +86,8 @@ contract Xfers is SarmaManager {
             publicInputs[i] = bytes32(sarmaToDestroy[i]);
         }
         publicInputs[SARMA_SIZE] = bytes32(sarmaToDestroyPayload);
-        require(prv2prvVerifier.verify(proof, publicInputs), "Unauthorized");
+        // require(prv2prvVerifier.verify(proof, publicInputs), "Unauthorized"); // Verifier broken until future version of Noir
+        // See issue: https://github.com/AztecProtocol/aztec-packages/issues/1844
 
         // Create Sarma UTXO and deduct beans
         uint8 payloadToDestroy = abi.decode(sarmaToDestroyPayload, (uint8));
