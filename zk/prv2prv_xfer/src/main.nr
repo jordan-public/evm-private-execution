@@ -39,6 +39,8 @@ fn main(public_key_x : [u8; 32], public_key_y : [u8; 32], signature1: [u8; 64], 
     sarma3_payload: pub [u8; sarma_length-65]
     ) {
 
+    // Private to private BEAN transfer
+
     isSarma(public_key_x, public_key_y, signature1, privkey, sarma1, sarma1_decrypted, sarma1_payload);
     isSarma(public_key_x, public_key_y, signature2, privkey, sarma2, sarma2_decrypted, sarma2_payload);
     isSarma(public_key_x, public_key_y, signature3, privkey, sarma3, sarma3_decrypted, sarma3_payload);
