@@ -1,1 +1,3 @@
-*.private_key
+*
+!.gitkeep
+!.gitignore
