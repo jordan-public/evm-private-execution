@@ -2,7 +2,7 @@
 
 Demo is [here](./demo/README.md).
 
-Video is [here](./demo/****).
+Video is [here](./demo/Sarma.mp4) and on YouTube [here](https://youtu.be/TQwNU1_pgeE).
 
 ## Abstract
 

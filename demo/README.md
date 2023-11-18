@@ -2,7 +2,7 @@
 
 ## Video
 
-The video is [here](./video.asd) or on YouTube [here](https://www.youtube.com).
+The video is [here](./Sarma.mp4) or on YouTube [here](https://youtu.be/TQwNU1_pgeE).
 
 ## Demo instructions
 
