@@ -1,0 +1,26 @@
+# Compiler files
+cache/
+out/
+
+tmp/
+
+**/.DS_Store
+
+web/src/artifacts/*
+!web/src/artifacts/.gitkeep
+
+tmp/*
+!tmp/.gitkeep
+
+broadcast/Deploy.s.sol/*/*
+!broadcast/Deploy.s.sol/*/run-latest.json
+# Ignores development broadcast logs
+# !/broadcast
+/broadcast/*/31337/
+# /broadcast/**/dry-run/
+
+# Docs
+docs/
+
+# Dotenv file
+.env

@@ -28,7 +28,8 @@ fn isSarma(public_key_x : [u8; 32], public_key_y : [u8; 32], signature: [u8; 64]
 
 fn main(public_key_x : [u8; 32], public_key_y : [u8; 32], signature: [u8; 64],
     privkey: [u8; 32],
-    sarma: [u8; sarma_length], sarma_decrypted: [u8; sarma_length],
+    sarma: pub [u8; sarma_length], 
+    sarma_decrypted: [u8; sarma_length],
     sarma_payload: pub [u8; sarma_length-65]) {
 
     isSarma(public_key_x, public_key_y, signature, privkey, sarma, sarma_decrypted, sarma_payload);
