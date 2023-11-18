@@ -12,7 +12,7 @@ fs.writeFileSync('./keys/account2', privateKey2HexString)
 // Check the keys
 k1 = fs.readFileSync('./keys/account1').toString()
 k2 = fs.readFileSync('./keys/account2').toString()
-console.log('Verified:', privateKey1HexString === k1 && privateKey2HexString === k2)
+console.log('Private keys verified:', privateKey1HexString === k1 && privateKey2HexString === k2)
 
 // Get the public key 1 and serialized it to a file
 const signingKey1 = new ethers.SigningKey(privateKey1HexString)
@@ -23,3 +23,8 @@ fs.writeFileSync('./keys/account1.pub', publicKey1)
 const signingKey2 = new ethers.SigningKey(privateKey2HexString)
 const publicKey2 = signingKey2.publicKey;
 fs.writeFileSync('./keys/account2.pub', publicKey2)
+
+// Check the public keys
+const p1 = fs.readFileSync('./keys/account1.pub').toString()
+const p2 = fs.readFileSync('./keys/account2.pub').toString()
+console.log('Public keys verified:', publicKey1 === p1 && publicKey2 === p2)
