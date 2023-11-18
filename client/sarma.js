@@ -10,10 +10,10 @@ function construct(privkey, recepient_pubkey, payload) {
     
     // Verify the signature
     const recoveredPublicKey = ethers.SigningKey.recoverPublicKey(digest, signature)
-    //const recoveredPublicKeyCompressed = ethers.SigningKey.computePublicKey(recoveredPublicKey, true)
     if (recoveredPublicKey !== signingKey.publicKey) {
         throw new Error("Signature mismatch")
     }
+    // console.log("publicKey", signingKey.publicKey, typeof signingKey.publicKey, signingKey.publicKey.length)
     // console.log("signature", JSON.stringify(signature))
     const signatureHexString = signature.r.slice(2) + signature.s.slice(2) + signature.v.toString(16)
     // console.log("signatureHexString", signatureHexString, typeof signatureHexString, signatureHexString.length)
