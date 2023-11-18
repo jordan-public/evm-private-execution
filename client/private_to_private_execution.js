@@ -1,7 +1,7 @@
 const sarma = require('./sarma')
 const ethers = require('ethers')
 const fs = require('fs')
-const { exec, execSync } = require('child_process');
+const { execSync } = require('child_process');
 
 const privateKey1 = fs.readFileSync('./keys/account1').toString()
 const publicKey2 = fs.readFileSync('./keys/account2.pub').toString()

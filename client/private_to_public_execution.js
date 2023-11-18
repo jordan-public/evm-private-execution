@@ -1,12 +1,12 @@
 const sarma = require('./sarma')
 const ethers = require('ethers')
 const fs = require('fs')
-const { exec, execSync } = require('child_process');
+const { execSync } = require('child_process');
 
 const privateKey1 = fs.readFileSync('./keys/account1').toString()
 const publicKey2 = fs.readFileSync('./keys/account2.pub').toString()
 
-const inputValue = 2;
+const inputValue = 1;
 // Convert to hex string
 //const payload = ethers.hexlify(new Uint8Array([inputValue])).slice(2)
 const payload = new Uint8Array([inputValue])
