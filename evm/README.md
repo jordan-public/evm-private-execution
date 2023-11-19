@@ -64,26 +64,3 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
-
-## Testnet Deployments
-
-I tried deployments on all following networks. However some are missing the following:
-
-BN128 Pairing Precompile — Address: ```0x08```
-
-See more details: [EIP-196](https://eips.ethereum.org/EIPS/eip-196) and [EIP-197](https://eips.ethereum.org/EIPS/eip-197).
-
-Here are the networks (some missing the above pre-compiles fail the proof verification):
-
-- Scroll Sepolia
-- Polygon zkEVM Testnet
-- Mantle Testnet
-- Gnosis Chiado
-- Linea Testnet
-- Neon Devnet
-- zkSync Testnet (foundry deployment fails)
-- Arbitrum Goerli
-- Base Goerli
-- Celo Alfajores
-- Chiliz Scoville
-- Filecoin FVM Testnet
