@@ -25,22 +25,22 @@ forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://rpc.c
 
 source push_artifacts.sh "Deploy.s.sol/10200"
 
-# Linea
+# Linea Testnet
 forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://rpc.goerli.linea.build" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
 
 source push_artifacts.sh "Deploy.s.sol/59140"
 
-# Neon
+# Neon Devnet
 forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://devnet.neonevm.org" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
 
 source push_artifacts.sh "Deploy.s.sol/245022940"
 
-# zkSync
+# zkSync Testnet
 forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://testnet.era.zksync.dev" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
 
 source push_artifacts.sh "Deploy.s.sol/280"
 
-# Arbitrum
+# Arbitrum Goerli
 forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://goerli-rollup.arbitrum.io/rpc" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
 
 source push_artifacts.sh "Deploy.s.sol/421613"
