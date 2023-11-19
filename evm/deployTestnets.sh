@@ -35,7 +35,7 @@ forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://devne
 
 source push_artifacts.sh "Deploy.s.sol/245022940"
 
-# zkSync Testnet
+# zkSync Era Testnet (fails - needs special handling)
 forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://testnet.era.zksync.dev" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
 
 source push_artifacts.sh "Deploy.s.sol/280"
