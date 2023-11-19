@@ -60,5 +60,11 @@ forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://scovi
 
 source push_artifacts.sh "Deploy.s.sol/88880"
 
+# Filecoin FVM Testnet
+#forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://api.calibration.node.glif.io/rpc/v1" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
+forge script script/Deploy.s.sol:Deploy --legacy --slow --rpc-url "https://filecoin-calibration.chainup.net/rpc/v1" --sender $SENDER --private-key $PRIVATE_KEY --broadcast -vvvv
+
+source push_artifacts.sh "Deploy.s.sol/314159"
+
 # cd web
 # npm run build
