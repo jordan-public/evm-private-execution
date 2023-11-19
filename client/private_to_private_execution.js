@@ -46,21 +46,21 @@ const proverToml =
     `sarma_payload = ${JSON.stringify(Array.from(payload, byte => byte.toString()))}` + "\n" +
     `sarma = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
     `sarma_decrypted = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}`
-fs.writeFileSync('../zk/prv2pub_xfer/Prover.toml', proverToml)
+fs.writeFileSync('../zk/prv2prv_xfer/Prover.toml', proverToml)
 
 // Generate the proof
-// Execute the following command in the ../zk/prv2pub_xfer directory
+// Execute the following command in the ../zk/prv2prv_xfer directory
 // nargo prove
 try {
-    execSync('cd ../zk/prv2pub_xfer && time nargo prove --silence-warnings', { encoding: 'utf-8' });
+    execSync('cd ../zk/prv2prv_xfer && time nargo prove --silence-warnings', { encoding: 'utf-8' });
 } catch (error) {
     console.error('Error occurred:', error);
 }
 
-// Execute the following command in the ../zk/prv2pub_xfer directory
+// Execute the following command in the ../zk/prv2prv_xfer directory
 // nargo verify
 try {
-    execSync('cd ../zk/prv2pub_xfer && time nargo verify --silence-warnings', { encoding: 'utf-8' });
+    execSync('cd ../zk/prv2prv_xfer && time nargo verify --silence-warnings', { encoding: 'utf-8' });
 } catch (error) {
     console.error('Error occurred:', error);
 }
@@ -68,11 +68,11 @@ try {
  const sp = '0x' + s + s.slice(130);
  console.log('Sarma + payload: ', sp);
 
- const proof = '0x' + fs.readFileSync('../zk/prv2pub_xfer/proofs/prv2pub_xfer.proof').toString();
+ const proof = '0x' + fs.readFileSync('../zk/prv2prv_xfer/proofs/prv2prv_xfer.proof').toString();
  console.log('Proof: ', proof);
 
 try {
-    const command = 'cd ../evm && source .env && cast send $CONTRACT_ADDRESS "prv2pubXfer(bytes,bytes)" ' +
+    const command = 'cd ../evm && source .env && cast send $CONTRACT_ADDRESS "prv2prvXfer(bytes,bytes)" ' +
     sp + ' ' + proof + ' --private-key $PRIVATE_KEY --rpc-url $RPC_URL';
     console.log('Command:', command)
     const output = execSync(command, { encoding: 'utf-8' });
