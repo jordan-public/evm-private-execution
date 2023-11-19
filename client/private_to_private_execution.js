@@ -41,11 +41,19 @@ const payloadDigest = ethers.keccak256(payloadUint8Array)
 const proverToml = 
     `public_key_x = ${JSON.stringify(Array.from(ethers.getBytes('0x' + publicKey1.slice(4, 68)), byte => byte.toString()))}` + "\n" +
     `public_key_y = ${JSON.stringify(Array.from(ethers.getBytes('0x' + publicKey1.slice(68, 132)), byte => byte.toString()))}` + "\n" +
-    `signature = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s.slice(0,128)), byte => byte.toString()))}` + "\n" +
+    `signature1 = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s.slice(0,128)), byte => byte.toString()))}` + "\n" +
+    `signature2 = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s.slice(0,128)), byte => byte.toString()))}` + "\n" +
+    `signature3 = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s.slice(0,128)), byte => byte.toString()))}` + "\n" +
     `privkey = ${JSON.stringify(Array.from(ethers.getBytes(privateKey1), byte => byte.toString()))}` + "\n" +
-    `sarma_payload = ${JSON.stringify(Array.from(payload, byte => byte.toString()))}` + "\n" +
-    `sarma = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
-    `sarma_decrypted = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}`
+    `sarma1_payload = ${JSON.stringify(Array.from(payload, byte => byte.toString()))}` + "\n" +
+    `sarma2_payload = ${JSON.stringify(Array.from(payload, byte => byte.toString()))}` + "\n" +
+    `sarma3_payload = ${JSON.stringify(Array.from(payload, byte => byte.toString()))}` + "\n" +
+    `sarma1 = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
+    `sarma2 = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
+    `sarma3 = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
+    `sarma1_decrypted = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
+    `sarma2_decrypted = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}` + "\n" +
+    `sarma3_decrypted = ${JSON.stringify(Array.from(ethers.getBytes('0x' + s), byte => byte.toString()))}`
 fs.writeFileSync('../zk/prv2prv_xfer/Prover.toml', proverToml)
 
 // Generate the proof
