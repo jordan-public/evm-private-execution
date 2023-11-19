@@ -110,6 +110,22 @@ In addition I implemented a mock-up Smart Contract which emulates Hyperlink cros
 
 See [this](./demo/README.md) for instructions.
 
+## Future work - Idempotent Sarma Transitions
+
+Let us define an **Idempotent** transition $T$:
+
+$\forall x: T(T(x, y), y) = T(x, y)$
+
+We have to stretch the above definition recursively as **Eventual Idempotency**, stating that a repetition of the transition in a sequence, does not change anything if one of the operations in the sequence is repeated at any time.
+
+Why is this interesting? If we create Sarma Transitions that are Idempotent the intermediate Sarmas do not even need to be stored on the EVM. Just the final result. 
+
+Example: Voting. Let's count the votes for a certain outcome by storing them in a Sparse Merkle Tree (SMT), and produce a recursive proof that the new voter was not in the tree, so he cannot vote twice. We do not need to make the constraints such that the proof fails if the voter tries to vote twice. Instead, we let them vote twice, but the resulting SMT to be the same as if the voter voted once. Yet, allow the proof to succeed by shaping the constraints properly. If the root of this SMT is recorded in a Sarma at the beginning we would not need to record the Sarmas on-chain each time - only at the end.
+
+Proving Idempotency is hard, but enforcing is not so hard: all we need is to enforce it. So, to implement this, one Noir function call would contain an check of Idempotency after the fact. If it passes, no Sarma is recorded on-chain, unless the user "insists". This would not be a constraint, but merely a "shortcut".
+
+This is very easy to implement.
+
 ## FAQ
 
 Q: The Sarmas are associated with addresses, does this not break the privacy? 
