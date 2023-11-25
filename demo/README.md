@@ -37,9 +37,9 @@ node private_to_public_execution.js
 
 I tried deployments on all following networks. However some are missing the following:
 
-BN128 Pairing Precompile — Address: ```0x08```
+alt_bn128 Pairing Precompile — Address: ```0x09```
 
-See more details: [EIP-196](https://eips.ethereum.org/EIPS/eip-196) and [EIP-197](https://eips.ethereum.org/EIPS/eip-197).
+See more details: [EIP-196](https://eips.ethereum.org/EIPS/eip-196).
 
 Here are the networks (some missing the above pre-compiles fail the proof verification):
 
