@@ -17,7 +17,7 @@
 
 🏆 [Aztec — Best overall Noir application or library](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🥇 [Neon EVM — 1st Place Best Neon EVM use case](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+🥇 [Neon Foundation — 1st Place Best Neon EVM use case](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
 🏆 [Scaling Ethereum Finalist](https://ethglobal.com/showcase/cfd-dex-and-flash-trillions-ad666) - Finalist presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609)
 
