@@ -1,8 +1,33 @@
+[This project](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o) won the following prizes at the [ETHGlobal Istanbul 2023](https://ethglobal.com/events/istanbul) hackathon:
+
+
+🏊 [Filecoin — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏊 [Arbitrum — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏊 [Chiliz — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏆 [Linea — Best dApp on Linea](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🔀 [Polygon — Best Cross-chain / LxLy Bridge implementation](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🚀 [Scroll — Deploy on Scroll](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏆 [Aleo - Grand Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏆 [Aztec — Best overall Noir application or library](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🥇 [Neon EVM — 1st Place Best Neon EVM use case](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏆 [Scaling Ethereum Finalist](https://ethglobal.com/showcase/cfd-dex-and-flash-trillions-ad666) - Finalist presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609)
+
 # Sarma - Private Transaction System for EVM with cross-chain ability
 
 Demo is [here](./demo/README.md).
 
 Video is [here](./demo/Sarma.mp4) and on YouTube [here](https://youtu.be/TQwNU1_pgeE).
+
+EthGlobal Istanbul finalist presentation is [here](https://youtu.be/RW6qZTEIqWc?t=2609).
 
 ## Abstract
 
