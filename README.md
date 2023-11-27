@@ -27,7 +27,7 @@ Demo is [here](./demo/README.md).
 
 Video is [here](./demo/Sarma.mp4) and on YouTube [here](https://youtu.be/TQwNU1_pgeE).
 
-EthGlobal Istanbul finalist presentation is [here](https://youtu.be/RW6qZTEIqWc?t=2609).
+ETHGlobal Istanbul finalist presentation is [here](https://youtu.be/RW6qZTEIqWc?t=2609).
 
 ## Abstract
 
