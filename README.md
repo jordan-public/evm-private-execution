@@ -7,7 +7,7 @@
 
 🏊 [Chiliz — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🏆 [Linea — Best dApp on Linea](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+🏆 [Deploy your Dapp on Linea](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
 🔀 [Polygon — Best Cross-chain / LxLy Bridge implementation](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
