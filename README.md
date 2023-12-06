@@ -1,25 +1,24 @@
 [This project](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o) won the following prizes at the [ETHGlobal Istanbul 2023](https://ethglobal.com/events/istanbul) hackathon:
 
-
-🏊 [Filecoin — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
-
 🏊 [Arbitrum — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🚀 [Scroll — Deploy on Scroll](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
 🏊 [Chiliz — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🏆 [Deploy your Dapp on Linea](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+🥷 [MetaMask – Deploy your Dapp on Linea](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🔀 [Polygon — Best Cross-chain / LxLy Bridge implementation](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
-
-🚀 [Scroll — Deploy on Scroll](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+🏊 [IPFS & Filecoin — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
 🏆 [Aleo - Grand Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
 🏆 [Aztec — Best overall Noir application or library](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🥇 [Neon — 1st Place](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+🔀 [Polygon — Cross-chain / LxLy Bridge implementation](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🏆 [ETHGlobal Istanbul 2023 Finalist](https://ethglobal.com/showcase/cfd-dex-and-flash-trillions-ad666) - Finalist presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609)
+🏆 [Neon EVM — Best Neon EVM use case - 1st Place](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
+
+🏆 [ETHGlobal Istanbul 2023 Finalist](https://ethglobal.com/showcase/cfd-dex-and-flash-trillions-ad666) (presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609))
 
 # Sarma - Private Transaction System for EVM with cross-chain ability
 
