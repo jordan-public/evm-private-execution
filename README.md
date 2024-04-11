@@ -20,7 +20,11 @@
 
 🏆 [ETHGlobal Istanbul 2023 Finalist](https://ethglobal.com/showcase/cfd-dex-and-flash-trillions-ad666) (presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609))
 
+---
+
 This repository has moved to a private repository to continue development of the project.
+
+---
 
 # Sarma - Private Transaction System for EVM with cross-chain ability
 
