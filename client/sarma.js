@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: BUSL-1.1
 const arblen_elgamal = require('./arblen_elgamal')
 const ethers = require('ethers')
 

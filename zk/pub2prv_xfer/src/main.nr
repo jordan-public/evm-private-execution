@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: BUSL-1.1
 use dep::std;
 
 global sarma_length: u8 = 66; // This is the length of the sarma body = 132 bytes for the sinature + 8 bytes for the payload

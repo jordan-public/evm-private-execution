@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: BUSL-1.1
 // This is a stubbed implementation of the ElGamal encryption scheme of arbitrary lentgh of
 // the cleartext/cyphertext.
 
