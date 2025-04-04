@@ -18,7 +18,7 @@
 
 🏆 [Neon EVM — Best Neon EVM use case - 1st Place](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
-🏆 [ETHGlobal Istanbul 2023 Finalist](https://ethglobal.com/showcase/cfd-dex-and-flash-trillions-ad666) (presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609))
+🏆 [ETHGlobal Istanbul 2023 Finalist](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o) (presentaion [here](https://youtu.be/RW6qZTEIqWc?t=2609))
 
 ---
 
