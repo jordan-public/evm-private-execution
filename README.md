@@ -1,4 +1,4 @@
-[This project](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o) won the following prizes at the [ETHGlobal Istanbul 2023](https://ethglobal.com/events/istanbul) hackathon:
+[This project](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o) is the most awarded project in the history of ETHGlobal (see [here](https://x.com/zkether/status/1875377941221404910?s=67&t=vtDcKv0cIYkWxPHsb4Wp8w)). It won the following prizes at the [ETHGlobal Istanbul 2023](https://ethglobal.com/events/istanbul) hackathon:
 
 🏊 [Arbitrum — Pool Prize](https://ethglobal.com/showcase/sarma-evm-zkevm-pexc-9wp7o)
 
